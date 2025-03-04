@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonic AI</title>
+    <link rel="icon" type="image/png" href="./public/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <div class="logo">
+                <img src="./public/hd.png" alt="Sonic AI Logo">
+            </div>
+            <div class="nav-menu">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#tokenomics" class="nav-link">Tokenomics</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+            </div>
+        </div>
+        <div class="nav-social">
+            <a href="https://x.com/SonicAI_Coin" class="social-link" target="_blank" rel="noopener noreferrer">
+                <svg class="social-icon twitter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/>
+                </svg>
+            </a>
+            <a href="https://t.me/Sonic_AI_Official" class="social-link" target="_blank" rel="noopener noreferrer">
+                <svg class="social-icon telegram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+                    <path d="M248 8C111 8 0 119 0 256S111 504 248 504 496 393 496 256 385 8 248 8zM363 176.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7 .2-.7 .3-3.1-1.2-4.4s-3.6-.8-5.1-.5q-3.3 .7-104.6 69.1-14.8 10.2-26.9 9.9c-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3q.8-6.7 18.5-13.7 108.4-47.2 144.6-62.3c68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6 .5 9.6 2.9a10.5 10.5 0 0 1 3.5 6.7A43.8 43.8 0 0 1 363 176.7z"/>
+                </svg>
+            </a>
+            <a href="javascript:void(0)" class="social-link" rel="noopener noreferrer">
+                <img src="./public/dextools.svg" alt="DEXTools" class="social-icon dextools">
+            </a>
+            <a href="javascript:void(0)" class="social-link" rel="noopener noreferrer">
+                <img src="./public/dex-screener-seeklogo.svg" alt="DEXScreener" class="social-icon dexscreener">
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="dot-pattern" id="dotPattern"></div>
+            <div class="hero-content">
+                <div class="hero-text fade-up">
+                    <h1>The First Personalized DeFAI Agent Platform On Solana</h1>
+                    <p class="intro">Sonic AI is a cutting-edge AI-driven platform built on Solana, empowering users with fully autonomous, self-learning AI agents that optimize trading, execute DeFi strategies</p>
+                    <button class="cta">Documentation</button>
+                </div>
+                <div class="hero-image fade-in">
+                    <img src="./public/p3.png" alt="Sonic AI Platform">
+                </div>
+            </div>
+            <div class="gradient-sphere"></div>
+        </section>
+        
+        <section class="features" id="features">
+            <h2 class="fade-up">AI Agents Built for Web3 Automation</h2>
+            <p class="features-intro fade-up">Effortlessly automate complex tasks with AI agents that streamline Web3 operations</p>
+            
+            <div class="features-grid stagger-children">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="gradient-icon">
+                            <defs>
+                                <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color: #214e82"/>
+                                    <stop offset="75%" style="stop-color: #ec5409"/>
+                                    <stop offset="100%" style="stop-color: #ffc966"/>
+                                </linearGradient>
+                            </defs>
+                            <g>
+                                <path fill="url(#iconGradient)" fill-rule="evenodd" d="m8.16403 0.712891 0.25882 0.965929 0.83985 3.13438 0.25882 0.96593 -1.93185 0.51764 -0.25882 -0.96593L6.491 2.19645l-0.25882 -0.96592L8.16403 0.712891ZM0.730957 8.14572l0.965923 0.25882 3.13439 0.83985 0.96592 0.25882 0.51764 -1.93185 -0.96592 -0.25882 -3.13439 -0.83985 -0.96593 -0.25882 -0.517633 1.93185Zm8.204233 0.85496L11.7481 21.6588l3.1645 -3.1645 4.5712 4.5712L23 19.5494l-4.5712 -4.5712 3.1645 -3.1646L8.93519 9.00068ZM3.99386 15.6872l-0.7071 0.7071 -1.41422 -1.4142 0.70711 -0.7071 2.29453 -2.2945 0.70711 -0.7071 1.41421 1.4142 -0.70711 0.7071 -2.29453 2.2945ZM15.7053 3.9758l0.7071 -0.70711 -1.4142 -1.41421 -0.7071 0.7071 -2.2946 2.29453 -0.7071 0.70711 1.4143 1.41421 0.7071 -0.7071 2.2945 -2.29453Z" clip-rule="evenodd" stroke-width="1"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <h3>Effortless One-Click Setup</h3>
+                    <p>Launch your AI Agent instantly- no coding required - and personalize it to follow each user's trading strategies. Agents have memory: Chat, Summarize, Save!</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="gradient-icon">
+                            <defs>
+                                <linearGradient id="tradingGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color: #214e82"/>
+                                    <stop offset="75%" style="stop-color: #ec5409"/>
+                                    <stop offset="100%" style="stop-color: #ffc966"/>
+                                </linearGradient>
+                            </defs>
+                            <g>
+                                <path fill="url(#tradingGradient)" fill-rule="evenodd" d="M9.5 5v6h7v3.5L23 8l-6.5 -6.5V5h-7Zm-2 8h7v6h-7v3.5L1 16l6.5 -6.5V13Z" clip-rule="evenodd" stroke-width="1"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <h3>Master Trading with DeFAI</h3>
+                    <p>Integrate on-chain activities and leverage AI-driven DeFi for the ultimate trading experience.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="gradient-icon">
+                            <defs>
+                                <linearGradient id="dataGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color: #214e82"/>
+                                    <stop offset="75%" style="stop-color: #ec5409"/>
+                                    <stop offset="100%" style="stop-color: #ffc966"/>
+                                </linearGradient>
+                            </defs>
+                            <path fill="url(#dataGradient)" fill-rule="evenodd" clip-rule="evenodd" d="M3.46447 3.46447C2 4.92893 2 7.28595 2 12c0 4.714 0 7.0711 1.46447 8.5355C4.92893 22 7.28595 22 12 22c4.714 0 7.0711 0 8.5355 -1.4645C22 19.0711 22 16.714 22 12c0 -4.71405 0 -7.07107 -1.4645 -8.53553C19.0711 2 16.714 2 12 2 7.28595 2 4.92893 2 3.46447 3.46447ZM17.5762 10.4801c0.2651 -0.3182 0.2221 -0.79109 -0.0961 -1.05627 -0.3182 -0.26517 -0.7911 -0.22218 -1.0563 0.09603l-1.7969 2.15624c-0.3707 0.445 -0.5985 0.7154 -0.786 0.8848 -0.087 0.0785 -0.1386 0.1099 -0.1634 0.1218 -0.005 0.0025 -0.0086 0.0039 -0.0108 0.0048 0 0 -0.0043 -0.0017 -0.0077 -0.0033l-0.0032 -0.0015c-0.0247 -0.0119 -0.0763 -0.0433 -0.1633 -0.1218 -0.1876 -0.1694 -0.4153 -0.4398 -0.7861 -0.8848l-0.2924 -0.3509c-0.3285 -0.3942 -0.6246 -0.7496 -0.9012 -0.9994 -0.3009 -0.2717 -0.68 -0.51375 -1.1795 -0.51375 -0.49946 0 -0.87852 0.24205 -1.17946 0.51375 -0.27659 0.2498 -0.57271 0.6052 -0.90117 0.9995l-1.82884 2.1946c-0.26517 0.3182 -0.22218 0.7911 0.09603 1.0563 0.31821 0.2651 0.79113 0.2221 1.05631 -0.0961l1.79689 -2.1562c0.37079 -0.445 0.59849 -0.7154 0.78604 -0.8848 0.087 -0.0785 0.1386 -0.1099 0.1634 -0.1218 0.0026 -0.0013 0.0049 -0.0023 0.0067 -0.0031l0.0041 -0.0017c0.0023 0.0009 0.0059 0.0023 0.0109 0.0048 0.0247 0.0119 0.0763 0.0433 0.1633 0.1218 0.1876 0.1694 0.4153 0.4398 0.7861 0.8848l0.2924 0.3509c0.3285 0.3942 0.6246 0.7496 0.9012 0.9994 0.3009 0.2717 0.68 0.5138 1.1795 0.5138 0.4995 0 0.8785 -0.2421 1.1795 -0.5138 0.2766 -0.2498 0.5727 -0.6052 0.9011 -0.9994l1.8289 -2.1947Z"/>
+                        </svg>
+                    </div>
+                    <h3>Insightful On-Chain Data</h3>
+                    <p>Buy and sell tokens and NFTs securely, with lightning speed, while enjoying immersive digital experiences.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="gradient-icon">
+                            <defs>
+                                <linearGradient id="automationGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color: #214e82"/>
+                                    <stop offset="75%" style="stop-color: #ec5409"/>
+                                    <stop offset="100%" style="stop-color: #ffc966"/>
+                                </linearGradient>
+                            </defs>
+                            <path fill="url(#automationGradient)" fill-rule="evenodd" d="M9 19v2h2v-2h2v2h2v-2h2c0.55 0 1.0208 -0.1958 1.4125 -0.5875C18.8042 18.0208 19 17.55 19 17v-2h2v-2h-2v-2h2V9h-2V7c0 -0.55 -0.1958 -1.02083 -0.5875 -1.4125C18.0208 5.19583 17.55 5 17 5h-2V3h-2v2h-2V3H9v2H7c-0.55 0 -1.02083 0.19583 -1.4125 0.5875C5.19583 5.97917 5 6.45 5 7v2H3v2h2v2H3v2h2v2c0 0.55 0.19583 1.0208 0.5875 1.4125C5.97917 18.8042 6.45 19 7 19h2Zm3.75 -9.1798V8.25h-1.5v1.5702C9.39935 10.1713 8 11.7972 8 13.75v1c0 0.2761 0.22386 0.5 0.5 0.5h7c0.2761 0 0.5 -0.2239 0.5 -0.5v-1c0 -1.9528 -1.3994 -3.5787 -3.25 -3.9298Zm-1.5 2.9298c0 0.4142 -0.3358 0.75 -0.75 0.75s-0.75 -0.3358 -0.75 -0.75 0.3358 -0.75 0.75 -0.75 0.75 0.3358 0.75 0.75 0.75Zm2.25 0.75c0.4142 0 0.75 -0.3358 0.75 -0.75s-0.3358 -0.75 -0.75 -0.75 -0.75 0.3358 -0.75 0.75 0.3358 0.75 0.75 0.75Z" clip-rule="evenodd" stroke-width="1"/>
+                        </svg>
+                    </div>
+                    <h3>Smart AI Agents for Facile Automation</h3>
+                    <p>Transform your workflows & logics with advanced AI agents and tailored automations built to tackle complex tasks.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <section class="bento">
+        <div class="bento-header">
+            <h2 class="fade-up">AI-Infused Solana</h2>
+            <p class="fade-up">Seamless integration with top AI models for effortless, intelligent blockchain experiences.</p>
+        </div>
+        
+        <div class="bento-grid stagger-children">
+            <div class="bento-card main">
+                <div class="bento-content">
+                    <h3>Fully integrated with Solana</h3>
+                    <p>Built for Solana with effortless integration into top AI models.</p>
+                </div>
+                <div class="bento-image">
+                    <img src="./public/p1.png" alt="Solana Integration">
+                </div>
+            </div>
+            
+            <div class="bento-card">
+                <div class="bento-content">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="gradient-icon">
+                            <path fill="white" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM9.29 16.29L5.7 12.7a.996.996 0 1 1 1.41-1.41L10 14.17l6.88-6.88a.996.996 0 1 1 1.41 1.41l-7.59 7.59a.996.996 0 0 1-1.41 0z" />
+                        </svg>
+                    </div>
+                    <h3>Smooth Transactions</h3>
+                    <p>Enjoy ultra-efficient, instant, and frictionless transactions. Fully integrated with Solana for seamless trading, token swaps (especially memecoin), NFT transactions, and blockchain tracking.</p>
+                </div>
+            </div>
+            
+            <div class="bento-card">
+                <div class="bento-content">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="gradient-icon">
+                            <path fill="white" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 2c4.41 0 8 3.59 8 8 0 1.48-.41 2.86-1.12 4.06l-1.47-1.47c.38-.82.59-1.73.59-2.69 0-3.31-2.69-6-6-6-.96 0-1.87.21-2.69.59L7.84 5.02C9.04 4.31 10.42 4 12 4zm-8 8c0-1.48.41-2.86 1.12-4.06l1.47 1.47c-.38.82-.59 1.73-.59 2.69 0 3.31 2.69 6 6 6 .96 0 1.87-.21 2.69-.59l1.47 1.47C14.86 19.59 13.48 20 12 20c-4.41 0-8-3.59-8-8z"/>
+                            <path fill="white" d="M12 8c2.21 0 4 1.79 4 4s-1.79 4-4 4-4-1.79-4-4 1.79-4 4-4zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3>Cutting-edge AI agents</h3>
+                    <p>Built for Solana, leveraging on-chain tools, data, and top AI models like OpenAI, Claude, and Gemini for seamless automation and smart decision-making.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="tokenomics" id="tokenomics">
+        <div class="tokenomics-header">
+            <h2 class="fade-up">Tokenomics ($SONIC)</h2>
+            <p class="token-supply fade-up">Total Supply: 100M $SONIC</p>
+        </div>
+        
+        <div class="tokenomics-grid">
+            <div class="utility-card scale-up">
+                <h3>Utility</h3>
+                <ul class="utility-list">
+                    <li>
+                        <span class="utility-title">Agent Ownership</span>
+                        <span class="utility-desc">Stake $SONIC to activate and own AI agents.</span>
+                    </li>
+                    <li>
+                        <span class="utility-title">Revenue Sharing</span>
+                        <span class="utility-desc">Earn a share of fees generated by Sonic AI's ecosystem.</span>
+                    </li>
+                    <li>
+                        <span class="utility-title">Governance</span>
+                        <span class="utility-desc">Holders vote on upgrades and AI agent improvements.</span>
+                    </li>
+                    <li>
+                        <span class="utility-title">AI Model Access</span>
+                        <span class="utility-desc">Premium AI strategies and custom agent configurations.</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="allocation-card scale-up">
+                <h3>Allocation</h3>
+                <div class="allocation-chart">
+                    <div class="chart-item" style="--percent: 60%">
+                        <div class="chart-label">
+                            <span class="chart-name">Liquidity & Public Sale</span>
+                            <span class="chart-value">60%</span>
+                        </div>
+                        <div class="chart-bar"></div>
+                    </div>
+                    <div class="chart-item" style="--percent: 15%">
+                        <div class="chart-label">
+                            <span class="chart-name">Development & Ecosystem</span>
+                            <span class="chart-value">15%</span>
+                        </div>
+                        <div class="chart-bar"></div>
+                    </div>
+                    <div class="chart-item" style="--percent: 10%">
+                        <div class="chart-label">
+                            <span class="chart-name">Community</span>
+                            <span class="chart-value">10%</span>
+                        </div>
+                        <div class="chart-bar"></div>
+                    </div>
+                    <div class="chart-item" style="--percent: 10%">
+                        <div class="chart-label">
+                            <span class="chart-name">Staking</span>
+                            <span class="chart-value">10%</span>
+                        </div>
+                        <div class="chart-bar"></div>
+                    </div>
+                    <div class="chart-item" style="--percent: 5%">
+                        <div class="chart-label">
+                            <span class="chart-name">Team & Advisors</span>
+                            <span class="chart-value">5%</span>
+                        </div>
+                        <div class="chart-bar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="faq" id="faq">
+        <div class="faq-header">
+            <h2 class="fade-up">FAQ</h2>
+        </div>
+        
+        <div class="faq-grid stagger-children">
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What is Sonic?</span>
+                    <svg class="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Sonic is a multi-platform on-chain analysis AI assistant that offers a wide range of chat to help you gain confluence and confidence in your trades and on-chain research. It simplifies complex processes, providing actionable insights and automation.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How does Sonic AI work?</span>
+                    <svg class="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Sonic's AI agents take user input and leverage tools to perform on-chain actions. Users provide simple chat, and Sonic's AI processes the information to deliver precise, real-time results.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What types of actions can Sonic take?</span>
+                    <svg class="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Sonic is capable of executing a variety of on-chain actions, including:</p>
+                    <ol>
+                        <li>Trading tokens</li>
+                        <li>Searching for tokens:
+                            <ul>
+                                <li>Top Holders insight</li>
+                                <li>Dev Detective</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What features are coming next?</span>
+                    <svg class="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="upcoming-features">
+                        <div class="feature-item">
+                            <h4>Memecoin Automation</h4>
+                            <p>Autonomously create a memecoin on Pump.fun every time chosen KOL tweets.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>KOL-driven Trades</h4>
+                            <p>Automatically buy every memecoin a KOL tweets about.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>Token Trendspotting</h4>
+                            <p>Identify and buy trending tokens before they surge.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>Sentiment Analysis</h4>
+                            <p>Decide whether to buy or sell a token based on the sentiment of a tweet.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="./public/hd.png" alt="Sonic AI Logo">
+                <p>The First Personalized DeFAI Agent Platform On Solana</p>
+            </div>
+            <div class="footer-social">
+                <a href="https://x.com/SonicAI_Coin" class="social-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="social-icon twitter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/>
+                    </svg>
+                </a>
+                <a href="https://t.me/Sonic_AI_Official" class="social-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="social-icon telegram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+                        <path d="M248 8C111 8 0 119 0 256S111 504 248 504 496 393 496 256 385 8 248 8zM363 176.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7 .2-.7 .3-3.1-1.2-4.4s-3.6-.8-5.1-.5q-3.3 .7-104.6 69.1-14.8 10.2-26.9 9.9c-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3q.8-6.7 18.5-13.7 108.4-47.2 144.6-62.3c68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6 .5 9.6 2.9a10.5 10.5 0 0 1 3.5 6.7A43.8 43.8 0 0 1 363 176.7z"/>
+                    </svg>
+                </a>
+                <a href="javascript:void(0)" class="social-link" rel="noopener noreferrer">
+                    <img src="./public/dextools.svg" alt="DEXTools" class="social-icon dextools">
+                </a>
+                <a href="javascript:void(0)" class="social-link" rel="noopener noreferrer">
+                    <img src="./public/dex-screener-seeklogo.svg" alt="DEXScreener" class="social-icon dexscreener">
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sonic AI. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html> 
