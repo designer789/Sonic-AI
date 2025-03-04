@@ -2,63 +2,43 @@
 function createDotPattern() {
     const container = document.getElementById('dotPattern');
     const containerRect = container.getBoundingClientRect();
+    const dotSpacing = 30;
     
-    // Calculate spacing based on viewport size to ensure full coverage
-    const dotSpacing = Math.min(window.innerWidth, window.innerHeight) / 30;
-    
-    // Calculate number of dots needed to cover the entire container with some overflow
-    const columns = Math.ceil(containerRect.width / dotSpacing) + 2;
-    const rows = Math.ceil(containerRect.height / dotSpacing) + 2;
+    // Calculate number of dots needed
+    const columns = Math.floor(containerRect.width / dotSpacing);
+    const rows = Math.floor(containerRect.height / dotSpacing);
     
     // Create dots using document fragment for better performance
     const fragment = document.createDocumentFragment();
     const dots = [];
     
-    // Create dots with requestAnimationFrame for smoother initial render
-    let currentRow = 0;
-    let currentCol = 0;
-
-    function createDotsChunk() {
-        const startTime = performance.now();
-        
-        while (currentRow < rows && performance.now() - startTime < 16) {
-            while (currentCol < columns) {
-                const dot = document.createElement('div');
-                dot.className = 'dot';
-                // Offset the dots by -dotSpacing/2 to ensure full coverage
-                dot.style.left = `${currentCol * dotSpacing - dotSpacing/2}px`;
-                dot.style.top = `${currentRow * dotSpacing - dotSpacing/2}px`;
-                fragment.appendChild(dot);
-                dots.push({
-                    element: dot,
-                    x: currentCol * dotSpacing - dotSpacing/2,
-                    y: currentRow * dotSpacing - dotSpacing/2
-                });
-                currentCol++;
-            }
-            currentCol = 0;
-            currentRow++;
-        }
-        
-        if (currentRow < rows) {
-            requestAnimationFrame(createDotsChunk);
-        } else {
-            container.appendChild(fragment);
-            // Start animation only after all dots are created
-            initializeMouseInteraction();
+    // Create dots
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < columns; j++) {
+            const dot = document.createElement('div');
+            dot.className = 'dot';
+            dot.style.left = `${j * dotSpacing + dotSpacing/2}px`;
+            dot.style.top = `${i * dotSpacing + dotSpacing/2}px`;
+            fragment.appendChild(dot);
+            dots.push({
+                element: dot,
+                x: j * dotSpacing + dotSpacing/2,
+                y: i * dotSpacing + dotSpacing/2
+            });
         }
     }
     
-    requestAnimationFrame(createDotsChunk);
+    container.appendChild(fragment);
     return dots;
 }
 
 // Store dots array globally for better performance
 let dotsArray = [];
+
+// Optimize animation with requestAnimationFrame
 let isAnimating = false;
 let mouseX = 0;
 let mouseY = 0;
-let animationFrame = null;
 
 // Create ripple effect
 function createRipple(x, y) {
@@ -100,96 +80,71 @@ function pulseDots(x, y) {
     });
 }
 
-// Optimize animation with throttling and performance checks
+// Animate dots on mouse move
 function animateDots() {
     if (!isAnimating) return;
-    
-    const now = performance.now();
     
     dotsArray.forEach(dot => {
         const dotX = dot.x;
         const dotY = dot.y;
         
+        // Calculate distance from mouse to dot
         const distX = mouseX - dotX;
         const distY = mouseY - dotY;
         const distance = Math.sqrt(distX * distX + distY * distY);
         
-        // Reduced influence range for better performance
-        if (distance < 120) {
-            const scale = (120 - distance) / 120;
+        // Increase influence range to 150px and push distance to 30px
+        if (distance < 150) {
+            const scale = (150 - distance) / 150;
             const angle = Math.atan2(distY, distX);
-            const push = 25 * scale;
-            const scaleEffect = 1 + scale;
+            const push = 30 * scale;
+            const scaleEffect = 1 + scale * 1.5;
             
             dot.element.style.transform = `translate(${Math.cos(angle) * -push}px, ${Math.sin(angle) * -push}px) scale(${scaleEffect})`;
-            dot.element.style.opacity = 0.35 + scale * 0.35;
-        } else if (dot.element.style.transform) {
+            dot.element.style.opacity = 0.35 + scale * 0.45;
+        } else {
             dot.element.style.transform = 'none';
             dot.element.style.opacity = 0.35;
         }
     });
     
-    animationFrame = requestAnimationFrame(animateDots);
+    requestAnimationFrame(animateDots);
 }
 
-// Throttle mouse move events
-function throttle(func, limit) {
-    let inThrottle;
-    return function(event) {
-        if (!inThrottle) {
-            func(event);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    }
-}
-
-// Initialize mouse interaction
-function initializeMouseInteraction() {
-    // Throttled mouse move handler
-    const handleMouseMove = throttle((e) => {
+// Initialize dot pattern and interactions
+window.addEventListener('load', () => {
+    dotsArray = createDotPattern();
+    
+    // Mouse move interaction with throttling
+    window.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
         
         if (!isAnimating) {
             isAnimating = true;
-            animationFrame = requestAnimationFrame(animateDots);
+            requestAnimationFrame(animateDots);
         }
-    }, 16); // Throttle to ~60fps
-
-    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    });
     
     window.addEventListener('mouseleave', () => {
         isAnimating = false;
-        if (animationFrame) {
-            cancelAnimationFrame(animationFrame);
-        }
-        // Reset all dots to original position
-        dotsArray.forEach(dot => {
-            dot.element.style.transform = 'none';
-            dot.element.style.opacity = 0.35;
-        });
     });
-}
-
-// Initialize dot pattern when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    dotsArray = createDotPattern();
     
-    // Debounced resize handler
+    // Click interaction
+    document.querySelector('.hero').addEventListener('click', (e) => {
+        createRipple(e.clientX, e.clientY);
+        pulseDots(e.clientX, e.clientY);
+    });
+    
+    // Optimize resize handler
     let resizeTimeout;
     window.addEventListener('resize', () => {
-        if (resizeTimeout) {
-            clearTimeout(resizeTimeout);
-        }
+        clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
             const container = document.getElementById('dotPattern');
             container.innerHTML = '';
-            if (animationFrame) {
-                cancelAnimationFrame(animationFrame);
-            }
             dotsArray = createDotPattern();
-        }, 250);
+        }, 150);
     });
 });
 
