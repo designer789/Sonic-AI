@@ -1100,4 +1100,26 @@ html {
 .stagger-children.visible > *:nth-child(2) { transition-delay: 0.2s; }
 .stagger-children.visible > *:nth-child(3) { transition-delay: 0.3s; }
 .stagger-children.visible > *:nth-child(4) { transition-delay: 0.4s; }
-.stagger-children.visible > *:nth-child(5) { transition-delay: 0.5s; } 
+.stagger-children.visible > *:nth-child(5) { transition-delay: 0.5s; }
+
+.hero-bottom-image {
+    width: 100%;
+    max-width: 1000px;
+    margin: -80px auto 40px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-bottom-image .full-width-image {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+    .hero-bottom-image {
+        margin: -40px auto 30px;
+    }
+} 
