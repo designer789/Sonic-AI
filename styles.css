@@ -1109,6 +1109,8 @@ html {
     padding: 0 20px;
     position: relative;
     z-index: 2;
+    display: flex;
+    justify-content: center;
 }
 
 .hero-bottom-image .full-width-image {
@@ -1116,6 +1118,7 @@ html {
     height: auto;
     border-radius: 20px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    object-fit: contain;
 }
 
 @media (max-width: 768px) {
