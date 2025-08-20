@@ -633,16 +633,19 @@ h1 {
 }
 
 .tokenomics-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 60px;
 }
 
-.utility-card, .allocation-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 24px;
-    padding: 2rem;
+.utility-card {
+    width: 1200px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
 }
 
 .utility-card h3, .allocation-card h3 {
@@ -1100,7 +1103,7 @@ html {
 .stagger-children.visible > *:nth-child(2) { transition-delay: 0.2s; }
 .stagger-children.visible > *:nth-child(3) { transition-delay: 0.3s; }
 .stagger-children.visible > *:nth-child(4) { transition-delay: 0.4s; }
-.stagger-children.visible > *:nth-child(5) { transition-delay: 0.5s; }
+.stagger-children.visible > *:nth-child(5) { transition-delay: 0.5s; } 
 
 .hero-bottom-image {
     width: 100%;
