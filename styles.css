@@ -640,7 +640,7 @@ h1 {
 }
 
 .utility-card {
-    width: 1200px;
+    width: 100%;
     padding: 40px;
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1127,5 +1127,291 @@ html {
 @media (max-width: 768px) {
     .hero-bottom-image {
         margin: -40px auto 30px;
+    }
+}
+
+/* ===== HAMBURGER BUTTON ===== */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-end;
+    z-index: 101;
+    position: relative;
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
+}
+
+.hamburger span {
+    display: block;
+    height: 1.5px;
+    background: oklch(95% 0.005 230);
+    border-radius: 1px;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.2s ease,
+                width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hamburger span:nth-child(1) { width: 22px; }
+.hamburger span:nth-child(2) { width: 15px; }
+.hamburger span:nth-child(3) { width: 22px; }
+
+.hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(4.5px, 4.5px);
+    width: 22px;
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-6px);
+}
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(4.5px, -4.5px);
+    width: 22px;
+}
+
+/* ===== MOBILE NAVIGATION OVERLAY ===== */
+.mobile-nav {
+    position: fixed;
+    inset: 0;
+    background: oklch(7% 0.006 240 / 0.97);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    z-index: 98;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-nav.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.mobile-nav-link {
+    color: oklch(95% 0.005 230);
+    text-decoration: none;
+    font-size: 1.75rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    opacity: 0.75;
+    transition: opacity 0.2s ease;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link:focus {
+    opacity: 1;
+    outline: none;
+}
+
+.mobile-nav-social {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.mobile-nav-social .social-link {
+    opacity: 0.55;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.mobile-nav-social .social-link:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.mobile-nav-social .social-icon {
+    width: 22px;
+    height: 22px;
+}
+
+.mobile-nav-social .social-icon.dextools,
+.mobile-nav-social .social-icon.dexscreener {
+    filter: brightness(0) invert(1);
+    opacity: 1;
+}
+
+/* ===== TABLET BREAKPOINT (769px – 1024px) ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-content {
+        gap: 2.5rem;
+    }
+
+    .hero-image {
+        height: 400px;
+    }
+
+    .features {
+        padding: 5rem 2rem;
+    }
+
+    .bento {
+        padding: 5rem 2rem;
+    }
+
+    .tokenomics {
+        padding: 5rem 2rem;
+    }
+
+    .faq {
+        padding: 5rem 2rem;
+    }
+}
+
+/* ===== MOBILE ADDITIONS (max-width: 768px) ===== */
+@media (max-width: 768px) {
+    /* Activate hamburger */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Fix bento main card: de-absolute the image so it doesn't collapse */
+    .bento-card.main {
+        min-height: unset;
+    }
+
+    .bento-card.main .bento-image {
+        position: relative;
+        right: auto;
+        top: auto;
+        width: 100%;
+        height: 180px;
+        margin-top: 1.5rem;
+    }
+
+    .bento-card.main::before {
+        background: linear-gradient(
+            180deg,
+            oklch(7% 0.005 230 / 0.95) 0%,
+            oklch(7% 0.005 230 / 0.4) 50%,
+            transparent 100%
+        );
+    }
+
+    .bento-card.main p {
+        max-width: 100%;
+    }
+
+    .bento-card.main .bento-content {
+        padding: 0;
+    }
+
+    /* Tokenomics padding */
+    .tokenomics {
+        padding: 4rem 1.5rem;
+    }
+
+    .utility-card {
+        padding: 24px;
+    }
+
+    /* Section padding consistency */
+    .features {
+        padding: 4rem 1.5rem;
+    }
+
+    .bento {
+        padding: 4rem 1.5rem;
+    }
+}
+
+/* ===== SMALL MOBILE (max-width: 480px) ===== */
+@media (max-width: 480px) {
+    nav {
+        padding: 1rem 1.25rem;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .hero {
+        padding: 1.25rem;
+    }
+
+    .hero-text {
+        padding-top: 4.5rem;
+    }
+
+    .cta {
+        padding: 0.875rem 2rem;
+        font-size: 1rem;
+    }
+
+    .hero-bottom-image {
+        margin: -20px auto 24px;
+        padding: 0 12px;
+    }
+
+    .features {
+        padding: 3.5rem 1.25rem;
+    }
+
+    .bento {
+        padding: 3.5rem 1.25rem;
+    }
+
+    .tokenomics {
+        padding: 3.5rem 1.25rem;
+    }
+
+    .faq {
+        padding: 3.5rem 1.25rem;
+    }
+
+    .footer {
+        padding: 2.5rem 1.25rem 1.25rem;
+    }
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .fade-up,
+    .fade-in,
+    .scale-up,
+    .stagger-children > * {
+        transition: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    .gradient-sphere {
+        animation: none;
+    }
+
+    .cta:hover::before {
+        animation: none;
+    }
+
+    .feature-card::before {
+        animation: none;
+    }
+
+    .dot {
+        transition: none;
     }
 } 
